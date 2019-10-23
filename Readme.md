@@ -8,6 +8,7 @@ This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web 
 ## Docker Quick Start :whale:
 
 * Ensure you have [Docker](https://www.docker.com/) installed on your local environment.
+* Navigate into CrashBucketing/
 * Run **docker build -t crashbuckets:v1.0 .**
 * Run **docker run --name crshbuckets -p 5000:80 -d crashbuckets:v1.0**
 * Navagate to https://localhost:5000 and the app will load.
