@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+  <div class="col-7">
+    <h3 id="bucketsLabel">{{pageHeader}}</h3>
+    <ul class="list-group mt-4" *ngIf="crashBuckets">
+      <app-crash-bucket *ngFor="let bucket of crashBuckets" [bucket]="bucket"></app-crash-bucket>
+    </ul>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+  <div class="col-3">
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark" (click)="loadMore()">{{loadingText}}</button>
+    </div>
+  </div>
+</div>

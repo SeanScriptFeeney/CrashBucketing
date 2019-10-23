@@ -1,0 +1,23 @@
+<div class="row justify-content-center " *ngIf="crash">
+  <div class="col-8 mt-4">
+    <div class="row">
+      <div class="col-6">
+        <h4 id="bucketsLabel">Crash Details</h4>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush mb-4 mt-4">
+      <li class="list-group-item"><span class="mr-4">Crash ID:</span> #{{crash.crashID}}</li>
+      <li class="list-group-item"><span class="mr-4">Application Name:</span> {{crash.appName}}</li>
+      <li class="list-group-item"><span class="mr-4">Platform Name:</span> {{crash.platformName}}</li>
+      <li class="list-group-item"><span class="mr-4">Crash Time:</span> {{crash.crashTime}}</li>
+    </ul>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h5 class="font-italic">Stack Trace: </h5>
+    </div>
+    <div class="overflow-auto stacktrace" style="height: 450px;">
+      <p class="font-italic bg-dark text-white p-2">
+        <code>{{crash.stacktrace}}</code>
+      </p>
+    </div>
+  </div>
+</div>

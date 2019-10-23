@@ -1,0 +1,44 @@
+<div class="row justify-content-center mt-4" *ngIf="crashBucket">
+  <div class="col-8">
+    <div class="row">
+      <div class="col-6">
+        <h4 id="bucketsLabel">Bucket Details</h4>
+      </div>
+      <div class="col-6 d-flex justify-content-between align-items-center">
+        <div>
+          Bucket No: {{crashBucket.bucketID}}
+        </div>
+        <div>
+          Crash Freq: {{crashBucket.crashCount}}
+        </div>
+      </div>
+    </div>
+
+    <table class='table table-striped mt-4' aria-labelledby="tableLabel">
+      <thead>
+        <tr>
+          <th>Crash ID</th>
+          <th>Crash Time</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crash of crashBucket.crashes">
+          <td> <a [routerLink]="['/crashdetail', crashBucket.bucketID, 'crash', crash.crashID]"># {{crash.crashID}}</a></td>
+          <td>{{crash.crashTime}}</td>
+          <td>
+            <a class="btn btn-outline-danger delete-crash" (click)="deleteCrash(crashBucket.bucketID, crash.crashID)">Delete Crash</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-4 mb-4">
+  <div class="col-3">
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark" (click)="loadMore()">{{loadingText}}</button>
+    </div>
+  </div>
+</div>

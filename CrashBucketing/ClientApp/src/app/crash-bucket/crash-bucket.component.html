@@ -1,0 +1,5 @@
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  <span>Crash Bucket <span class="font-weight-bold">#{{bucket.bucketID}}</span></span>
+  <span>Crash Count <span class="badge badge-warning badge ml-4 p-2 font-weight-bold crash-count">{{bucket.crashes.length}}</span></span>
+  <a [routerLink]="['/bucketdetail', bucket.bucketID]"  class="btn btn-outline-info float-right">View Details</a>
+</li>
