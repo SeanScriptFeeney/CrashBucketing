@@ -16,11 +16,10 @@
  RUN mkdir /usr/src/app
  WORKDIR /usr/src/app
 
-# # install and cache app dependencies and add the app
+# install and cache app dependencies and add the app
  COPY ClientApp/. /usr/src/app
  RUN npm install && npm run build --prod
 
-# #End Angular build
  FROM base AS final
  WORKDIR /app
  COPY --from=build /app .
@@ -28,6 +27,6 @@
  COPY --from=nodebuilder /usr/src/app/dist/. /app/ClientApp/dist/
  ENTRYPOINT ["dotnet", "CrashBucketing.dll"]
 
-# # Step 1 : docker build -t crashbuckets:v1.0 .
-# # Step 2 : docker run --name crshbuckets -p 5000:80 -d crashbuckets:v1.0
-# # Step 3 : navigate to localhost:5000
+# Step 1 : docker build -t crashbuckets:v1.0 .
+# Step 2 : docker run --name crshbuckets -p 5000:80 -d crashbuckets:v1.0
+# Step 3 : navigate to localhost:5000

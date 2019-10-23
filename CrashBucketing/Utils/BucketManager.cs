@@ -38,7 +38,7 @@ namespace CrashBucketing.Utils {
         }
 
         /// <summary>
-        /// Gets a buckets and sorts crashes based on a sort order
+        /// Gets a buckets and sorts crashes based on crash time.
         /// </summary>
         /// <param name="bucket"></param>
         /// <returns></returns>
@@ -75,7 +75,7 @@ namespace CrashBucketing.Utils {
             if (bucketId == null || crashId == null) {
                 throw new BucketManagerException ("bucketId and crashId cannot be null");
             }
-
+            
             var bucket = this.Buckets.Single (x => x.BucketID == bucketId);
 
             if (bucket.Crashes.Find (x => x.CrashID == crashId) != null) {

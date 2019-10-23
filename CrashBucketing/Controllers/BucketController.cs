@@ -9,14 +9,22 @@ namespace CrashBucketing.Controllers {
     [ApiController]
     [Route ("api/[controller]")]
     public class BucketsController : ControllerBase {
+
+        /// <summary>
+        /// Logger used during HTTP requests
+        /// </summary>
         private readonly ILogger<BucketsController> _logger;
+
+        /// <summary>
+        /// BucketManager property used to process bucket operations
+        /// </summary>
         private IBucketManager _bucketManager;
 
         public BucketsController (ILogger<BucketsController> logger) {
             _logger = logger;
             _bucketManager = new BucketManager ();
         }
-        
+
         // GET: api/buckets
         [HttpGet]
         public IEnumerable<IBucket> Get () {
