@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ICrashBucket } from '../crash-buckets/ICrashBucket';
 import { ActivatedRoute } from '@angular/router';
+
+import { ICrashBucket } from '../crash-buckets/ICrashBucket';
 import { CrashbucketService } from '../services/crashbucket.service';
 import { CrashBucket } from '../crash-buckets/CrashBucket';
 
@@ -11,6 +12,9 @@ import { CrashBucket } from '../crash-buckets/CrashBucket';
 })
 export class BucketDetailComponent implements OnInit, OnDestroy {
 
+  /**
+   * Properties of the BucketDetailComponent class
+   */
   crashBucket: ICrashBucket;
   activatedRoute: ActivatedRoute;
   crashBucketService: CrashbucketService;
@@ -19,15 +23,27 @@ export class BucketDetailComponent implements OnInit, OnDestroy {
   top10 = true;
   loadingText = 'Load More';
 
+  /**
+   * Creates an instance of bucket detail component.
+   * @param activatedR
+   * @param bucketService
+   */
   constructor(private activatedR: ActivatedRoute, private bucketService: CrashbucketService) {
     this.activatedRoute = activatedR;
     this.crashBucketService = bucketService;
   }
 
+  /**
+   * on init
+   */
   ngOnInit() {
     this.getBucketdetail(10);
   }
 
+  /**
+   * Loads the top 10 Buckets or loads
+   * all buckets depending on user selection.
+   */
   loadMore() {
 
     if (this.loadingText === 'Load More') {
@@ -42,12 +58,22 @@ export class BucketDetailComponent implements OnInit, OnDestroy {
     console.log(this.crashBucket);
   }
 
+  /**
+   * Deletes crash
+   * @param bucketId
+   * @param crashId
+   */
   deleteCrash(bucketId, crashId) {
     this.crashBucketService.removeCrash(bucketId, crashId);
     this.crashBucket.crashCount--;
   }
 
+  /**
+   * Gets bucketdetail
+   * @param limitCount
+   */
   getBucketdetail(limitCount: number) {
+
     this.activatedRoute.params.subscribe(
       (params) => {
         this.crashBucket = new CrashBucket();
@@ -67,6 +93,9 @@ export class BucketDetailComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * This method unsubscribes from the subscription that is listening to crash bucket updates
+   */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

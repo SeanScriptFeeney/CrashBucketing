@@ -26,12 +26,18 @@ This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web 
     3. Go to you browser **http://localhost:5000**
 
 
-## Running nUnit Tests :white_check_mark:
+## Running Unit Tests :white_check_mark:
 
-* All unit tests have been written in nUnit 3. They cover the basic functionality of the API. Additional work needs be done here.
+* .Net unit tests have been written in nUnit 3. They cover the basic functionality of the API. Additional work needs be done here.
 
     1. Navigate to the home directory (CrashBuckets)
     2. Run **dotnet test**.
+
+* Angular unit tests have been written in Jasmine with the Karma test runner. They cover the basic functionality. Additional work needs be done here.
+
+1. Navigate to the ClientApp directory (CrashBuckets/Crashbuckets/ClientApp)
+2. Run **ng test**.
+
 
 
 

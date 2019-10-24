@@ -10,6 +10,9 @@ import { CrashbucketService } from '../services/crashbucket.service';
 })
 export class CrashDetailComponent implements OnInit, OnDestroy {
 
+  /**
+   * Properties of the CrashDetailComponent class
+   */
   crash: ICrash;
   activatedRoute: ActivatedRoute;
   crashBucketService: CrashbucketService;
@@ -17,11 +20,19 @@ export class CrashDetailComponent implements OnInit, OnDestroy {
   crashId: number;
   bucketId: number;
 
+  /**
+   * Creates an instance of crash detail component.
+   * @param activatedR
+   * @param bucketService
+   */
   constructor(private activatedR: ActivatedRoute, private bucketService: CrashbucketService) {
     this.activatedRoute = activatedR;
     this.crashBucketService = bucketService;
   }
 
+  /**
+   * Invoked upon initialisation
+   */
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params) => {
@@ -33,13 +44,15 @@ export class CrashDetailComponent implements OnInit, OnDestroy {
 
     this.subscription = this.crashBucketService.crashChanged.subscribe(
       () => {
-          this.crash = this.crashBucketService.getCurrentCrash();
+        this.crash = this.crashBucketService.getCurrentCrash();
       }
     );
   }
 
+  /**
+   * This method unsubscribes from the subscription that is listening to crash detail updates
+   */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }

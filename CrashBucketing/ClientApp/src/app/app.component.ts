@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CrashbucketService } from './services/crashbucket.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'Bucket Crashing';
-}
+export class AppComponent {}

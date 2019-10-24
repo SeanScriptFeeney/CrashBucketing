@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CrashBucketComponent {
 
+  /**
+   * bucket input that is rendered on the UI
+   */
   @Input() bucket;
 }

@@ -8,6 +8,7 @@ This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web 
 ## Docker Quick Start :whale:
 
 * Ensure you have [Docker](https://www.docker.com/) installed on your local environment.
+* This example runs the Application in a Linux Container
 * Navigate into CrashBucketing/
 * Run **docker build -t crashbuckets:v1.0 .**
 * Run **docker run --name crshbuckets -p 5000:80 -d crashbuckets:v1.0**
@@ -27,12 +28,17 @@ This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web 
     3. Go to you browser **https://localhost:5001**
 
 
-## Running nUnit Tests :white_check_mark:
+## Running Unit Tests :white_check_mark:
 
-* All unit tests have been written in nUnit 3. They cover the basic functionality of the API. Additional work needs be done here.
+* .Net unit tests have been written in nUnit 3. They cover the basic functionality of the API. Additional work needs be done here.
 
     1. Navigate to the home directory (CrashBuckets)
     2. Run **dotnet test**.
+
+* Angular unit tests have been written in Jasmine with the Karma test runner. They cover the basic functionality. Additional work needs be done here.
+
+1. Navigate to the ClientApp directory (CrashBuckets/Crashbuckets/ClientApp)
+2. Run **ng test**.
 
 
 

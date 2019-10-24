@@ -9,6 +9,9 @@ import { CrashbucketService } from '../services/crashbucket.service';
 })
 export class CrashBucketsComponent implements OnInit, OnDestroy {
 
+  /**
+   * Properties of the CrashBucketsComponent class
+   */
   crashBuckets: Array<ICrashBucket> = [];
   crashBucketService: CrashbucketService;
   subscription;
@@ -16,10 +19,17 @@ export class CrashBucketsComponent implements OnInit, OnDestroy {
   loadingText = 'Load More';
   pageHeader = 'Top 5 Crash Buckets';
 
+  /**
+   * Creates an instance of crash buckets component.
+   * @param crashBucketServ
+   */
   constructor(private crashBucketServ: CrashbucketService) {
     this.crashBucketService = crashBucketServ;
   }
 
+  /**
+   * Invoked upon initialisation
+   */
   ngOnInit() {
     this.crashBucketService.fetchBuckets();
 
@@ -31,6 +41,10 @@ export class CrashBucketsComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * This function is used by the crash loading toggle on the UI.
+   * It is used to toggle between crash counts.
+   */
   loadMore() {
 
     if (this.loadingText === 'Load More') {
@@ -47,6 +61,9 @@ export class CrashBucketsComponent implements OnInit, OnDestroy {
     console.log(this.crashBuckets);
   }
 
+  /**
+   * This method unsubscribes from the subscription that is listening to crash updates
+   */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
