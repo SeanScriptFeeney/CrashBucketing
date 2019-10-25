@@ -55,7 +55,6 @@ export class BucketDetailComponent implements OnInit, OnDestroy {
     }
 
     this.crashBucket = this.crashBucketService.getCurrentCrashBucket();
-    console.log(this.crashBucket);
   }
 
   /**

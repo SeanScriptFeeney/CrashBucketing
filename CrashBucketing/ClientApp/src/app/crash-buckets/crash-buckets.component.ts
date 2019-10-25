@@ -36,7 +36,6 @@ export class CrashBucketsComponent implements OnInit, OnDestroy {
     this.subscription = this.crashBucketService.crashbucketsChanged.subscribe(
       () => {
         this.crashBuckets = this.crashBucketService.getBuckets(this.top5);
-        console.log(this.crashBuckets);
       }
     );
   }
@@ -58,7 +57,6 @@ export class CrashBucketsComponent implements OnInit, OnDestroy {
     }
 
     this.crashBuckets = this.crashBucketService.getBuckets(this.top5);
-    console.log(this.crashBuckets);
   }
 
   /**

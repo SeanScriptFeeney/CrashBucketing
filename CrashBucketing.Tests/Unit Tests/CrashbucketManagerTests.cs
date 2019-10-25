@@ -59,7 +59,7 @@ namespace CrashBucketing.Unit_Tests.CrashbucketManagerTests
 
         [Test]
         public void BucketIdNullException() {            
-                Assert.Throws(Is.TypeOf<BucketManagerException>().And.Message.EqualTo("Param bucket cannot be null"), 
+                Assert.Throws(Is.TypeOf<BucketManagerException>().And.Message.EqualTo("Paramater bucket cannot be null"), 
                 () => bucketManager.GetBucket(null));
         }
     }

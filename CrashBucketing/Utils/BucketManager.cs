@@ -45,7 +45,7 @@ namespace CrashBucketing.Utils {
         public IBucket GetBucket (IBucket bucket) {
 
             if (bucket == null) {
-                throw new BucketManagerException ("Param bucket cannot be null");
+                throw new BucketManagerException ("Paramater bucket cannot be null");
             }
 
             if (this.Buckets.Find (x => x.BucketID == bucket.BucketID) != null) {
@@ -59,10 +59,8 @@ namespace CrashBucketing.Utils {
                     foundbucket.Crashes = limitedCrashes;
                     return foundbucket;
                 }
-
                 return foundbucket;
             }
-
             return new Bucket ();
         }
 
@@ -81,7 +79,6 @@ namespace CrashBucketing.Utils {
             if (bucket.Crashes.Find (x => x.CrashID == crashId) != null) {
                 return bucket.Crashes.Single(x => x.CrashID == crashId);
             }
-
             return new Crash ();
         }
 

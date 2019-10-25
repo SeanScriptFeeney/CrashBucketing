@@ -90,7 +90,6 @@ export class CrashbucketService {
         if (top5) {
             return this.crashBuckets.slice(0, 5);
         }
-
         return this.crashBuckets.slice();
     }
 
