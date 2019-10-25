@@ -3,7 +3,8 @@ This project aims to provide the ability to group application errors together in
 
 ## Tech Stack
 
-This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web API and [Angular 8](https://angular.io/). [Bootstrap 4](https://getbootstrap.com/) is used as the from-end component library.
+This app is built on [.Net Core](https://dotnet.microsoft.com/download) 3.0 Web API and [Angular 8](https://angular.io/). 
+[Bootstrap 4](https://getbootstrap.com/) is used as the front-end component library.
 
 ## Docker Quick Start :whale:
 
